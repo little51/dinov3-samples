@@ -59,13 +59,18 @@ uv run python model_download2.py --repo_id facebook/dinov3-convnext-tiny-pretrai
 ![](https://github.com/little51/dinov3-samples/blob/main/image02.jpg)
 ![](https://github.com/little51/dinov3-samples/blob/main/image03.png)
 
+### 例1：获取图片的features
+
 ```shell
-# 例1，获取图片的features
 uv run --no-project python dinov3-sample01.py
 ## 结果
 Device set to use cuda:0
 [[[-3.0382916927337646, -0.3411354124546051, 2.226456642150879 ... ...
-# 例2，比对图片
+```
+
+### 例2：比对图片
+
+```shell
 uv run --no-project python dinov3-sample02.py
 ## 结果
 Device set to use cuda:0
@@ -73,3 +78,40 @@ Device set to use cuda:0
 图1与图3相似度: 0.936580648208369
 ```
 
+### 例3：零样本分类（与clip配合）
+
+```shell
+uv add openai-clip==1.0.1
+uv pip install --upgrade setuptools pip
+set HF_ENDPOINT=https://hf-mirror.com
+uv run --no-project python dinov3-sample03.py
+## 结果
+零样本分类结果:
+dog: 0.513
+cat: 0.211
+bird: 0.141
+person: 0.116
+car: 0.020
+```
+
+### 例4：零样本分类（dinotxt）
+
+```shell
+# 安装dinov3
+git clone https://github.com/facebookresearch/dinov3
+cd dinov3
+# 创建虚拟环境
+conda create -n dinov3 python=3.12 -y
+# 激活虚拟环境
+conda activate dinov3
+# 安装dinov3及其他依赖库
+pip install -e . -i https://pypi.mirrors.ustc.edu.cn/simple
+pip install transformers==4.56.1 -i https://pypi.mirrors.ustc.edu.cn/simple
+# 验证是否安装成功
+python -c "import torch; print(torch.cuda.is_available())"
+# 如不成功，重装PyTorch
+pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cu124
+# 运行实例
+cd ..
+python dinov3-sample04.py
+```
