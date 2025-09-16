@@ -55,6 +55,10 @@ uv run python model_download2.py --repo_id facebook/dinov3-convnext-tiny-pretrai
 
 ## 六、测试例程
 
+![](https://github.com/little51/dinov3-samples/blob/main/image01.jpeg)
+![](https://github.com/little51/dinov3-samples/blob/main/image02.jpg)
+![](https://github.com/little51/dinov3-samples/blob/main/image03.png)
+
 ```shell
 # 例1，获取图片的features
 uv run --no-project python dinov3-sample01.py
