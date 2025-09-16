@@ -20,7 +20,7 @@ https://aliendao.cn/uv/uv-x86_64-pc-windows-msvc.zip
 
 ```shell
 # 1、Clone代码
-https://github.com/little51/dinov3-samples
+git clone https://github.com/little51/dinov3-samples
 # 2、切换工作目录
 cd dinov3-samples
 # 3、设置Python镜像
