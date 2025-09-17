@@ -55,10 +55,6 @@ uv run python model_download2.py --repo_id facebook/dinov3-convnext-tiny-pretrai
 
 ## 六、测试例程
 
-![](https://github.com/little51/dinov3-samples/blob/main/image01.jpeg)
-![](https://github.com/little51/dinov3-samples/blob/main/image02.jpg)
-![](https://github.com/little51/dinov3-samples/blob/main/image03.png)
-
 ### 例1：获取图片的features
 
 ```shell
@@ -97,21 +93,30 @@ car: 0.020
 ### 例4：零样本分类（dinotxt）
 
 ```shell
-# 安装dinov3
+# 1、安装dinov3
 git clone https://github.com/facebookresearch/dinov3
 cd dinov3
-# 创建虚拟环境
+git checkout 1e358a2
+# 2、创建虚拟环境
 conda create -n dinov3 python=3.12 -y
-# 激活虚拟环境
+# 3、激活虚拟环境
 conda activate dinov3
-# 安装dinov3及其他依赖库
+# 4、安装dinov3及其他依赖库
 pip install -e . -i https://pypi.mirrors.ustc.edu.cn/simple
 pip install transformers==4.56.1 -i https://pypi.mirrors.ustc.edu.cn/simple
-# 验证是否安装成功
+# 5、验证是否安装成功
 python -c "import torch; print(torch.cuda.is_available())"
 # 如不成功，重装PyTorch
 pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cu124
-# 运行实例
+# 6、下载权重
+# 从以下地址下载两个权重文件，放到C:\Users\用户名\.cache\torch\hub\checkpoints目录下
+https://aliendao.cn/models/facebook/dinov3_vitl16_dinotxt_tet1280d20h24l
+# 7、运行实例
 cd ..
 python dinov3-sample04.py
+# 运行结果
+cat: 0.076
+dog: 0.120
+bird: 0.055
+person: 0.062
 ```
