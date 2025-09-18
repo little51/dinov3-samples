@@ -3,14 +3,18 @@ from transformers.image_utils import load_image
 import clip
 import torch
 import torch.nn as nn
+import torch
 
 url = "./image04.png"
 
 image = load_image(url)
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 feature_extractor = pipeline(
     model="./models/facebook/dinov3-convnext-tiny-pretrain-lvd1689m",
     task="image-feature-extraction",
+    device=device
 )
 features = feature_extractor(image)
 # shape: [1, 768]

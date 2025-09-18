@@ -120,3 +120,12 @@ dog: 0.120
 bird: 0.055
 person: 0.062
 ```
+
+### 例5：训练前景分割工具
+
+```shell
+conda activate dinov3
+pip install matplotlib==3.10.6
+python dinov3-sample05.py
+```
+
