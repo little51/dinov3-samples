@@ -4,11 +4,11 @@ Meta开源DINOv3视觉大模型，采用了无需标注的自学习技术，开�
 
 ## 一、基础条件
 
-NVIDIA显卡（4G或以上），CUDA12.4或以上。
+NVIDIA显卡（4G或以上），CUDA12.4或以上，如没有GPU资源，在CPU上也可以运行。
 
 ## 二、Python虚拟化工具UV安装
 
-官网上介绍的是用[MinoConda](https://zhida.zhihu.com/search?content_id=261875970&content_type=Article&match_order=1&q=MinoConda&zhida_source=entity)，这个有点重量级，本文采用uv管理Python虚拟化。uv从
+官网上介绍的是用Miniconda，这个有点重量级，本文采用uv管理Python虚拟化。uv从
 
 ```shell
 https://aliendao.cn/uv/uv-x86_64-pc-windows-msvc.zip
