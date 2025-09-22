@@ -129,6 +129,15 @@ pip install matplotlib==3.10.6
 python dinov3-sample05.py
 ```
 
+### 例6：彩色语义分割图
+
+```shell
+conda activate dinov3
+python dinov3-sample06.py
+```
+
+
+
 ## 作者新书《大模型项目实战：多领域智能应用》和《大模型项目实战：Agent开发与应用》技术交流群
 
 ![交流群](https://gitclone.com/download1/aliendao/aliendao20250916.jpg)
