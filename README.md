@@ -136,7 +136,35 @@ conda activate dinov3
 python dinov3-sample06.py
 ```
 
+### 例7：物体检测
 
+```shell
+# 1、克隆本项目源码
+git clone https://github.com/little51/dinov3-samples
+cd dinov3-samples
+# 2、安装dinov3（在本项目目录下）
+git clone https://github.com/facebookresearch/dinov3
+cd dinov3
+git checkout 1e358a2
+# 3、创建虚拟环境
+conda create -n dinov3 python=3.12 -y
+# 4、激活虚拟环境
+conda activate dinov3
+# 5、安装dinov3及其他依赖库
+pip install -e . -i https://pypi.mirrors.ustc.edu.cn/simple
+pip install transformers==4.56.1 -i https://pypi.mirrors.ustc.edu.cn/simple
+pip install matplotlib==3.10.6 -i https://pypi.mirrors.ustc.edu.cn/simple
+# 6、验证是否安装成功
+python -c "import torch; print(torch.cuda.is_available())"
+# 如不成功，重装PyTorch
+pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cu124
+# 7、下载权重
+# 从以下地址下载两个权重文件，放到项目的weights目录下
+https://aliendao.cn/models/facebook/dinov3_vit7b16_pretrain_lvd1689m#/
+# 8、运行实例
+cd ..
+python dinov3-sample07.py
+```
 
 ## 作者新书《大模型项目实战：多领域智能应用》和《大模型项目实战：Agent开发与应用》技术交流群
 
