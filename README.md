@@ -136,7 +136,7 @@ conda activate dinov3
 python dinov3-sample06.py
 ```
 
-### 例7：物体检测
+### 例7：目标检测
 
 ```shell
 # 1、克隆本项目源码
