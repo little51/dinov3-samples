@@ -6,15 +6,13 @@ Meta开源DINOv3视觉大模型，采用了无需标注的自学习技术，开�
 
 NVIDIA显卡（4G或以上），CUDA12.4或以上，如没有GPU资源，在CPU上也可以运行。
 
-## 二、Python虚拟化工具UV安装
+## 二、Python虚拟化工具
 
-官网上介绍的是用Miniconda，这个有点重量级，本文采用uv管理Python虚拟化。uv从
+本文中，前3个例子依赖环境较少，采用uv管理Python虚拟化。后面的例子由于要从源码安装dinov3库，依赖环境较复杂，所以使用了Miniconda管理Python虚拟化。
 
-```shell
-https://aliendao.cn/uv/uv-x86_64-pc-windows-msvc.zip
-```
+1、uv从https://aliendao.cn/uv/uv-x86_64-pc-windows-msvc.zip 下载，解压后将目录加到操作系统环境变量的Path中，其实这里只用到uv.exe。
 
- 下载，解压后将目录加到操作系统环境变量的Path中，其实这里只用到uv.exe。
+2、Miniconda的安装方法见：https://docs.anaconda.net.cn/miniconda/install/
 
 ## 三、创建Python虚拟环境
 
