@@ -44,3 +44,16 @@ pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https
 python eupe_train.py
 ```
 
+## 六、目标检测
+
+```shell
+# 创建虚拟环境
+conda create -n eupe1 python=3.12 -y
+# 激活虚拟环境
+conda activate eupe1
+# 安装依赖库
+pip install lightly-train
+# 检测
+python eupe_detect.py
+```
+
